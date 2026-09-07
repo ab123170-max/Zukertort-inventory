@@ -3,25 +3,25 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Product {
-  id             Int      @id @default(autoincrement())
-  name           String
-  brand          String?
-  category       String?
-  barcode        String?  @unique
-  quantity       Int      @default(0)
-  unit           String?
-  mrp            Float?
-  purchasePrice  Float?
-  sellingPrice   Float?
+  id              Int      @id @default(autoincrement())
+  name            String
+  brand           String?
+  category        String?
+  barcode         String?  @unique
+  quantity        Int      @default(0)
+  unit            String?
+  mrp             Float?
+  purchasePrice   Float?
+  sellingPrice    Float?
   manufactureDate String?
-  expiryDate     String?
-  location       String?
-  thumbnail      String?
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  expiryDate      String?
+  location        String?
+  thumbnail       String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
